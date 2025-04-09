@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../../core/models/product';
 import { CartService } from '../../core/services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -13,14 +14,15 @@ import { CartService } from '../../core/services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   cartItems: Product[] = [];
   totalCost: number = 0;
+  private cartSubscription!: Subscription;
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.getCart().subscribe(items => {
+    this.cartSubscription = this.cartService.getCart().subscribe(items => {
       this.cartItems = items;
       this.totalCost = this.cartService.getTotalCost();
     });
@@ -28,6 +30,15 @@ export class CartComponent implements OnInit {
 
   removeFromCart(productId: string): void {
     this.cartService.removeFromCart(productId);
-    this.totalCost = this.cartService.getTotalCost();
+  }
+
+  clearCart(): void {
+    this.cartService.clearCart();
+  }
+
+  ngOnDestroy(): void {
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
   }
 }

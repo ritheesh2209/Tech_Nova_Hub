@@ -1,17 +1,29 @@
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  color: #333;
-  transition: all 0.3s;
-}
-body.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
-body.dark-mode mat-card {
-  background-color: #444;
-  color: #fff;
-}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  body.dark-theme {
+    background-color: #212121;
+    color: #e0e0e0;
+  }
+  
+  body.dark-theme mat-card {
+    background-color: #424242;
+    color: #e0e0e0;
+  }
+  
+  body.dark-theme .product-details-container,
+  body.dark-theme .product-list-container,
+  body.dark-theme .cart-container,
+  body.dark-theme .wishlist-container {
+    background-color: #333;
+  }
+  
+  body.dark-theme .filters,
+  body.dark-theme .cart-summary {
+    background-color: #424242;
+  }
+  

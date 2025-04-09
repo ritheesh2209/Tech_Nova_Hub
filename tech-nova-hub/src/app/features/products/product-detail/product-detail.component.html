@@ -1,26 +1,37 @@
 <div class="product-details-container" *ngIf="product">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.price | currency }}</p>
-    <div class="action-buttons">
-      <button mat-icon-button (click)="toggleWishlist()">
-        <mat-icon [color]="isInWishlist ? 'warn' : ''">favorite</mat-icon>
-      </button>
-      <button mat-icon-button (click)="toggleCart()">
-        <mat-icon [color]="isInCart ? 'primary' : ''">shopping_cart</mat-icon>
-      </button>
+    <div class="product-header">
+      <div class="product-image">
+        <img [src]="product.imageUrls[0]" [alt]="product.name" />
+      </div>
+      <div class="product-info">
+        <h2>{{ product.name }}</h2>
+        <p class="price">{{ product.price | currency }}</p>
+        <div class="action-buttons">
+          <button mat-raised-button color="warn" (click)="toggleWishlist()">
+            <mat-icon>favorite</mat-icon>
+            {{ isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+          </button>
+          <button mat-raised-button color="primary" (click)="toggleCart()">
+            <mat-icon>shopping_cart</mat-icon>
+            {{ isInCart ? 'Remove from Cart' : 'Add to Cart' }}
+          </button>
+        </div>
+        <p class="description">{{ product.description }}</p>
+      </div>
     </div>
-    <p>{{ product.description }}</p>
-    <h3>Price History</h3>
-    <ul>
-      <li *ngFor="let history of product.priceHistory">
-        {{ history.date }}: {{ history.price | currency }}
-      </li>
-    </ul>
-    <h3>Reviews</h3>
-    <ul>
-      <li *ngFor="let review of product.reviews">
-        {{ review.user }} - {{ review.rating }}/5: {{ review.comment }} ({{ review.date }})
-      </li>
-    </ul>
+    <div class="product-details">
+      <h3>Price History</h3>
+      <ul>
+        <li *ngFor="let history of product.priceHistory">
+          {{ history.date }}: {{ history.price | currency }}
+        </li>
+      </ul>
+      <h3>Reviews</h3>
+      <ul>
+        <li *ngFor="let review of product.reviews">
+          <span class="reviewer">{{ review.user }}</span> - {{ review.rating }}/5: {{ review.comment }} ({{ review.date }})
+        </li>
+      </ul>
+    </div>
   </div>
   

@@ -1,46 +1,82 @@
 .product-details-container {
-    padding: 20px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .product-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .product-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-info {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin: 10px 0;
   }
   
   .action-buttons {
     display: flex;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 15px;
+    margin: 15px 0;
   }
   
-  .product-card {
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .action-buttons button {
+    padding: 8px 16px;
   }
   
-  .pannellum-viewer {
-    width: 100%;
-    height: 300px; /* Larger height for better visibility */
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  .description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
   }
   
-  .image-fallback {
-    width: 100%;
-    height: 300px; /* Match the Pannellum viewer height */
-    overflow: hidden;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .image-fallback img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .product-details {
+    margin-top: 30px;
   }
   
   h3 {
-    margin-top: 20px;
-    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
   }
   
-  mat-list-item {
-    margin-bottom: 10px;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .reviewer {
+    font-weight: bold;
+    color: #1976d2;
   }
   
