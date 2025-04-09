@@ -1,0 +1,16 @@
+.wishlist-container {
+    padding: 20px;
+  }
+  
+  .wishlist-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .wishlist-item {
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

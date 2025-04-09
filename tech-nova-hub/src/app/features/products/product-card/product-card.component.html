@@ -1,0 +1,19 @@
+<mat-card class="product-card" (click)="onSelect()">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>${{ product.price | number:'1.2-2' }}</mat-card-subtitle>
+    </mat-card-header>
+    <div *ngIf="!isBrowser" class="image-fallback">
+      <img [src]="product.imageUrls[0]" alt="{{ product.name || 'Product' }}" loading="lazy">
+    </div>
+    <div *ngIf="isBrowser" [id]="viewerId" class="pannellum-viewer"></div>
+    <mat-card-actions>
+      <button mat-icon-button (click)="toggleWishlist(); $event.stopPropagation()">
+        <mat-icon [color]="isInWishlist ? 'warn' : ''">favorite</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleCart(); $event.stopPropagation()">
+        <mat-icon [color]="isInCart ? 'primary' : ''">shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  

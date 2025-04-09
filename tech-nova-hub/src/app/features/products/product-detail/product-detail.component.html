@@ -1,0 +1,29 @@
+<div class="product-details-container" *ngIf="product">
+    <mat-card class="product-card">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>${{ product.price | number:'1.2-2' }}</mat-card-subtitle>
+      </mat-card-header>
+      <div *ngIf="!isBrowser" class="image-fallback">
+        <img [src]="product.imageUrls[0]" alt="{{ product.name || 'Product' }}" loading="lazy">
+      </div>
+      <div *ngIf="isBrowser" [id]="viewerId" class="pannellum-viewer"></div>
+      <mat-card-content>
+        <p>{{ product.description }}</p>
+        <h3>Price History</h3>
+        <mat-list>
+          <mat-list-item *ngFor="let history of product.priceHistory">
+            {{ history.date }}: ${{ history.price | number:'1.2-2' }}
+          </mat-list-item>
+        </mat-list>
+        <h3>Reviews</h3>
+        <mat-list>
+          <mat-list-item *ngFor="let review of product.reviews">
+            <strong>{{ review.user }}</strong> ({{ review.rating }}/5) - {{ review.date }}
+            <p>{{ review.comment }}</p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

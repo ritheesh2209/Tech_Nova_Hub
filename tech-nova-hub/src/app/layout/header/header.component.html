@@ -1,0 +1,11 @@
+<header>
+    <h1>TechNova Hub</h1>
+    <nav>
+      <a routerLink="/products">Products</a>
+      <a routerLink="/wishlist">Wishlist</a>
+      <a routerLink="/cart">Cart</a>
+    </nav>
+    <button mat-raised-button (click)="toggleDarkMode()">
+      {{ darkMode ? 'Light' : 'Dark' }} Mode
+    </button>
+  </header>

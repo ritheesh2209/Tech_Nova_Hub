@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1",
+    "name": "Galaxy Z Fold 5",
+    "price": 1799,
+    "description": "A foldable smartphone with a 7.6-inch display.",
+    "category": "Smartphones",
+    "imageUrls": [
+      "https://pannellum.org/images/alma.jpg"
+    ],
+    "priceHistory": [
+      { "date": "2025-01-01", "price": 1899 },
+      { "date": "2025-02-01", "price": 1849 },
+      { "date": "2025-03-01", "price": 1799 }
+    ],
+    "reviews": [
+      {
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Amazing phone! The foldable screen is a game-changer.",
+        "date": "2025-04-01"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Apple Watch Ultra 2",
+    "price": 799,
+    "description": "A rugged smartwatch for extreme sports.",
+    "category": "Wearables",
+    "imageUrls": [
+      "https://pannellum.org/images/alma.jpg"
+    ],
+    "priceHistory": [
+      { "date": "2025-01-01", "price": 849 },
+      { "date": "2025-02-01", "price": 829 },
+      { "date": "2025-03-01", "price": 799 }
+    ],
+    "reviews": [
+      {
+        "user": "Jane Smith",
+        "rating": 4,
+        "comment": "Great for fitness tracking, but the battery life could be better.",
+        "date": "2025-04-02"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Oculus Quest 3",
+    "price": 499,
+    "description": "A VR headset for immersive gaming.",
+    "category": "Gaming",
+    "imageUrls": [
+      "https://pannellum.org/images/alma.jpg"
+    ],
+    "priceHistory": [
+      { "date": "2025-01-01", "price": 549 },
+      { "date": "2025-02-01", "price": 529 },
+      { "date": "2025-03-01", "price": 499 }
+    ],
+    "reviews": [
+      {
+        "user": "Alex Brown",
+        "rating": 5,
+        "comment": "Incredible VR experience! Highly recommend.",
+        "date": "2025-04-03"
+      }
+    ]
+  }
+]
