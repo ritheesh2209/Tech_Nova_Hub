@@ -1,7 +1,11 @@
 .product-details-container {
     padding: 20px;
+  }
+  
+  .action-buttons {
     display: flex;
-    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
   }
   
   .product-card {

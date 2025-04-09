@@ -4,13 +4,16 @@
   
   .cart-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
   }
   
   .cart-item {
     max-width: 300px;
-    width: 100%;
+    width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
   }
-  

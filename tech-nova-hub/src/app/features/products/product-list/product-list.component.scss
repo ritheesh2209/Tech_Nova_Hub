@@ -1,21 +1,18 @@
-.product-list {
-    padding: 2rem;
-  }
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Responsive grid layout
-    gap: 1.5rem;
-  }
-  .loading {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-  }
-  .filters {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    align-items: center;
+.product-list-container {
+    padding: 20px;
   }
   
+  .filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }

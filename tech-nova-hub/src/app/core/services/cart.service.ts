@@ -52,4 +52,8 @@ export class CartService {
   isInCart(productId: string): boolean {
     return this.cart.some(item => item.id === productId);
   }
+  
+  getTotalCost(): number {
+    return this.cart.reduce((total, item) => total + item.price, 0);
+  }
 }
