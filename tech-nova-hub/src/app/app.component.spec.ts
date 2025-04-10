@@ -4,9 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router, provideRouter } from '@angular/router';
 import { CartService } from './core/services/cart.service';
 import { WishlistService } from './core/services/wishlist.service';
-import { of } from 'rxjs';
+import { of, Subject } from 'rxjs';
+import { Location } from '@angular/common';
+import { SpyLocation } from '@angular/common/testing';
 
 describe('AppComponent', () => {
   let titleService: Title;
@@ -14,6 +17,32 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     const titleServiceMock = {
       setTitle: jasmine.createSpy('setTitle')
+    };
+
+    const activatedRouteMock = {
+      snapshot: {
+        paramMap: {
+          get: () => '1' // Mock paramMap.get for any route parameters
+        }
+      }
+    };
+
+    const cartServiceMock = {
+      cartItems$: of([]),
+      isInCart: () => false
+    };
+
+    const wishlistServiceMock = {
+      wishlistItems$: of([]),
+      isInWishlist: () => false
+    };
+
+    const routerEventsSubject = new Subject(); // For router events
+    const routerMock = {
+      navigate: jasmine.createSpy('navigate'),
+      events: routerEventsSubject.asObservable(), // Mock the events Observable
+      createUrlTree: jasmine.createSpy('createUrlTree').and.returnValue({}), // Mock createUrlTree
+      serializeUrl: jasmine.createSpy('serializeUrl').and.returnValue('/mock-url') // Mock serializeUrl
     };
 
     await TestBed.configureTestingModule({
@@ -24,9 +53,13 @@ describe('AppComponent', () => {
         FooterComponent
       ],
       providers: [
+        provideRouter([]), // Provide router with no routes
+        { provide: Location, useClass: SpyLocation }, // Provide a spy for Location
         { provide: Title, useValue: titleServiceMock },
-        { provide: CartService, useValue: { cartItems$: of([]) } },
-        { provide: WishlistService, useValue: { wishlistItems$: of([]) } }
+        { provide: ActivatedRoute, useValue: activatedRouteMock },
+        { provide: Router, useValue: routerMock }, // Provide the updated router mock
+        { provide: CartService, useValue: cartServiceMock },
+        { provide: WishlistService, useValue: wishlistServiceMock }
       ]
     }).compileComponents();
 

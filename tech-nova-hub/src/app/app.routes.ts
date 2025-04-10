@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { ProductListComponent } from './features/products/product-list/product-list.component';
-import { ProductDetailsComponent } from './features/products/product-detail/product-detail.component';
+import { ProductDetailsComponent } from '@app/features/products/product-details/product-details.component';
 import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { CartComponent } from './features/cart/cart.component';
 

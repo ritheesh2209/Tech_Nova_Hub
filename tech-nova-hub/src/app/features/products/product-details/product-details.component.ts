@@ -13,8 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-product-details',
   standalone: true,
   imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
