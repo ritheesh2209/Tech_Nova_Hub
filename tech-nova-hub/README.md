@@ -33,26 +33,44 @@ Tech Nova Hub is an e-commerce web application built with Angular, designed to p
 - Node.js (v18.x or later)
 - Angular CLI (v17.x or later)
 
-## Development server
+### Installation
 
-To start a local development server, run:
+1. Clone the repository:
+```
+git clone https://github.com/ritheesh2209/Tech_Nova_Hub.git
+```
 
-```bash
+2. Navigate to the main repository folder:
+```
+cd Tech_Nova_Hub
+```
+
+3. Navigate to the inner project directory where the Angular code is located:
+```
+cd tech-nova-hub
+```
+
+4. Install dependencies:
+```
+npm install
+```
+
+5. Run the development server:
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+6. Open your browser and visit:
+```
+http://localhost:4200/
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Working with Branches
 
+If you want to access a specific branch (like the feature/initial_branch):
+```
+git checkout feature/initial_branch
+```
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
