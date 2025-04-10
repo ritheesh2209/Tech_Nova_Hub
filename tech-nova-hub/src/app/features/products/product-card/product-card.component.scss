@@ -36,7 +36,7 @@
   
   mat-card-title {
     font-size: 1.2rem;
-    color: #ffffff; // White text for dark background
+    color: #2e7d32; // White text for dark background
   }
   
   mat-card-subtitle {
@@ -64,11 +64,11 @@
     background-color: #ffffff; // White background in light mode
   
     mat-card-title {
-      color: #333; // Dark text for light background
+      color: #2e7d32; // Dark text for light background
     }
   
     mat-card-content {
-      color: #555; // Dark gray for description
+      color: #2e7d32; // Dark gray for description
     }
   
     mat-card-subtitle {

@@ -1,48 +1,49 @@
 .wishlist-container {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-width: 1400px;
-    margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wishlist-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.wishlist-item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+// Dark mode styles
+:host-context(body.dark-theme) .wishlist-item {
+  mat-card-title {
+    color: #f9f9f9; // Coral for product name in dark mode
   }
-  
-  .wishlist-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 30px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+
+  mat-card-content p {
+    color: #f9f9f9; // Red for description in dark mode
   }
-  
-  h2 {
-    color: #2e7d32;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+}
+
+// Light mode styles
+:host-context(body:not(.dark-theme)) .wishlist-item {
+  mat-card-title {
+    color: #f9f9f9; // Deep orange for product name in light mode
   }
-  
-  // Dark mode styles
-  :host-context(body.dark-theme) .wishlist-items {
-    ::ng-deep app-product-card {
-      mat-card-title {
-        color: #f9f9f9 !important; // Bright amber for product name in dark mode
-      }
-  
-      mat-card-content {
-        color: #f9f9f9 !important; // Light blue for description in dark mode
-      }
-    }
+
+  mat-card-content p {
+    color: #f9f9f9; // Blue for description in light mode (for testing)
   }
-  
-  // Light mode styles
-  :host-context(body:not(.dark-theme)) .wishlist-items {
-    ::ng-deep app-product-card {
-      mat-card-title {
-        color: #f9f9f9 !important; // Vibrant pink for product name in light mode
-      }
-  
-      mat-card-content {
-        color: #f9f9f9 !important; // Darker blue for description in light mode
-      }
-    }
-  }
+}

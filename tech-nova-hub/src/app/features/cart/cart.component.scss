@@ -1,71 +1,71 @@
 .cart-container {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-width: 1400px;
-    margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.cart-summary {
+  margin: 20px 0;
+  text-align: right;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h3 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 1.5rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cart-item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+// Dark mode styles
+:host-context(body.dark-theme) .cart-item {
+  mat-card-title {
+    color: #f9f9f9; // Coral for product name in dark mode
   }
-  
-  .cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+
+  mat-card-content p {
+    color:#f9f9f9; // Red for description in dark mode
   }
-  
-  h2 {
-    color: #2e7d32;
-    font-size: 1.8rem;
-    margin: 0;
+}
+
+// Light mode styles
+:host-context(body:not(.dark-theme)) .cart-item {
+  mat-card-title {
+    color: #f9f9f9; // Deep orange for product name in light mode
   }
-  
-  .cart-summary {
-    margin: 20px 0;
-    text-align: right;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  mat-card-content p {
+    color: #f9f9f9; // Blue for description in light mode (for testing)
   }
-  
-  .cart-summary h3 {
-    margin: 0;
-    color: #2e7d32;
-    font-size: 1.5rem;
-  }
-  
-  .cart-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 30px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-  }
-  
-  //.Concurrent mode styles
-  :host-context(body.dark-theme) .cart-items {
-    ::ng-deep app-product-card {
-      mat-card-title {
-        color: #ff8a65 !important; // Coral for product name in dark mode
-      }
-  
-      mat-card-content {
-        color: #a7ffeb !important; // Light teal for description in dark mode
-      }
-    }
-  }
-  
-  // Light mode styles
-  :host-context(body:not(.dark-theme)) .cart-items {
-    ::ng-deep app-product-card {
-      mat-card-title {
-        color: #e64a19 !important; // Deep orange for product name in light mode
-      }
-  
-      mat-card-content {
-        color: #00796b !important; // Teal for description in light mode
-      }
-    }
-  }
-  
+}
