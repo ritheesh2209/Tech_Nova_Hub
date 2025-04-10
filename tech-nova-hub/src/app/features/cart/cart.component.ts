@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from '../../core/models/product';
-import { CartService } from '../../core/services/cart.service';
-import { Subscription } from 'rxjs';
+import { CartService } from 'app/core/services/cart.service';
+import { CartItem } from 'app/core/models/cart-item';
 
 @Component({
   selector: 'app-cart',
@@ -14,31 +13,32 @@ import { Subscription } from 'rxjs';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit, OnDestroy {
-  cartItems: Product[] = [];
+export class CartComponent implements OnInit {
+  cartItems: CartItem[] = [];
   totalCost: number = 0;
-  private cartSubscription!: Subscription;
 
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {
-    this.cartSubscription = this.cartService.getCart().subscribe(items => {
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
       this.totalCost = this.cartService.getTotalCost();
     });
   }
 
-  removeFromCart(productId: string): void {
+  increaseQuantity(item: CartItem) {
+    this.cartService.updateQuantity(item.product.id, item.quantity + 1);
+  }
+
+  decreaseQuantity(item: CartItem) {
+    this.cartService.updateQuantity(item.product.id, item.quantity - 1);
+  }
+
+  removeFromCart(productId: string) {
     this.cartService.removeFromCart(productId);
   }
 
-  clearCart(): void {
+  clearCart() {
     this.cartService.clearCart();
-  }
-
-  ngOnDestroy(): void {
-    if (this.cartSubscription) {
-      this.cartSubscription.unsubscribe();
-    }
   }
 }

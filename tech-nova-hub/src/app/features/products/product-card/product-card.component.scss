@@ -5,7 +5,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex: 0 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #212121; // Dark background for dark mode
+  background-color: #212121;
 }
 
 .product-card:hover {
@@ -29,17 +29,17 @@
 
 mat-card-title {
   font-size: 1.2rem;
-  color: #2e7d32; // White text for dark background
+  color: #2e7d32;
 }
 
 mat-card-subtitle {
   font-size: 1rem;
-  color: #2e7d32; // Keep the green color for price
+  color: #2e7d32;
 }
 
 mat-card-content {
   font-size: 0.9rem;
-  color: #b0b0b0; // Light gray for description
+  color: #b0b0b0;
 }
 
 mat-card-actions {
@@ -54,17 +54,17 @@ mat-card-actions button {
 
 // Adjust styles for light mode
 :host-context(body:not(.dark-theme)) .product-card {
-  background-color: #ffffff; // White background in light mode
+  background-color: #ffffff;
 
   mat-card-title {
-    color: #2e7d32; // Dark text for light background
+    color: #2e7d32;
   }
 
   mat-card-content {
-    color: #2e7d32; // Dark gray for description
+    color: #2e7d32;
   }
 
   mat-card-subtitle {
-    color: #2e7d32; // Keep the green color for price
+    color: #2e7d32;
   }
 }

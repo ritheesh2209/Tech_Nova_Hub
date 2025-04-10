@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Product } from 'app/core/models/product';
+import { CartItem } from 'app/core/models/cart-item';
 import { WishlistService } from 'app/core/services/wishlist.service';
 import { CartService } from 'app/core/services/cart.service';
 import { Router } from '@angular/router';
@@ -36,8 +37,8 @@ export class ProductCardComponent implements OnInit {
       this.isInWishlist = items.some(item => item.id === this.product.id);
     });
 
-    this.cartService.cartItems$.subscribe(items => {
-      this.isInCart = items.some(item => item.id === this.product.id);
+    this.cartService.cartItems$.subscribe((items: CartItem[]) => {
+      this.isInCart = items.some(item => item.product.id === this.product.id);
     });
   }
 

@@ -62,32 +62,94 @@ h2 {
   object-fit: cover;
 }
 
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity-selector span {
+  min-width: 20px;
+  text-align: center;
+  color: #3f51b5;
+}
+
+.quantity-selector button {
+  color: #3f51b5;
+}
+
 // Dark mode styles
-:host-context(body.dark-theme) .cart-item {
-  mat-card-title {
-    color: #f9f9f9; // Coral for product name in dark mode
+:host-context(body.dark-theme) {
+  .cart-container {
+    background-color: #424242;
   }
 
-  mat-card-subtitle {
-    color: #f9f9f9;
+  h2 {
+    color: #81c784;
   }
 
-  mat-card-content p {
-    color:#f9f9f9; // Red for description in dark mode
+  .cart-summary {
+    background-color: #616161;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .cart-summary h3 {
+    color: #81c784;
+  }
+
+  .cart-item {
+    background-color: #616161;
+
+    mat-card-title {
+      color: #070200;
+    }
+
+    mat-card-subtitle {
+      color: #b0bec5;
+    }
+
+    mat-card-content p {
+      color: #60c1a6;
+    }
+  }
+
+  .quantity-selector span {
+    color: #90caf9;
+  }
+
+  .quantity-selector button {
+    color: #043f21;
+  }
+
+  .image-fallback {
+    border-color: #757575;
   }
 }
 
 // Light mode styles
-:host-context(body:not(.dark-theme)) .cart-item {
-  mat-card-title {
-    color: #f9f9f9; // Deep orange for product name in light mode
+:host-context(body:not(.dark-theme)) {
+  .cart-item {
+    background-color: #fff;
+
+    mat-card-title {
+      color: #070200;
+    }
+
+    mat-card-subtitle {
+      color: #546e7a;
+    }
+
+    mat-card-content p {
+      color: #60c1a6;
+    }
   }
 
-  mat-card-subtitle {
-    color: #f9f9f9;
+  .quantity-selector span {
+    color: #0a0800;
   }
 
-  mat-card-content p {
-    color: #f9f9f9; // Blue for description in light mode (for testing)
+  .quantity-selector button {
+    color: #043f21;
   }
 }
