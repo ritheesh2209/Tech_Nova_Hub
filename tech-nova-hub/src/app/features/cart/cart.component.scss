@@ -54,6 +54,10 @@ h2 {
     color: #f9f9f9; // Coral for product name in dark mode
   }
 
+  mat-card-subtitle {
+    color: #f9f9f9;
+  }
+
   mat-card-content p {
     color:#f9f9f9; // Red for description in dark mode
   }
@@ -63,6 +67,10 @@ h2 {
 :host-context(body:not(.dark-theme)) .cart-item {
   mat-card-title {
     color: #f9f9f9; // Deep orange for product name in light mode
+  }
+
+  mat-card-subtitle {
+    color: #f9f9f9;
   }
 
   mat-card-content p {
