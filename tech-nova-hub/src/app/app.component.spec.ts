@@ -82,7 +82,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, tech-nova-hub');
+    expect(compiled.querySelector('h1')?.textContent).toContain('TechNova Hub');
   });
 
   it('should set the document title to TechNova Hub', () => {
