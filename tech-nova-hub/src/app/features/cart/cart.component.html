@@ -10,6 +10,9 @@
   </div>
   <div *ngIf="cartItems.length > 0" class="cart-summary">
     <h3>Total Cost: ${{ totalCost | number:'1.2-2' }}</h3>
+    <button mat-raised-button color="primary" [routerLink]="['/checkout']" [disabled]="cartItems.length === 0">
+      <mat-icon>shopping_cart_checkout</mat-icon> Checkout
+    </button>
   </div>
   <div class="cart-items">
     <mat-card *ngFor="let item of cartItems" class="cart-item">
