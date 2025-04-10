@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { HeaderComponent } from './layout/header/header.component'; // Import HeaderComponent
+import { FooterComponent } from './layout/footer/footer.component'; // Import FooterComponent
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent, // Add HeaderComponent to imports
+    FooterComponent  // Add FooterComponent to imports
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'tech-nova-hub';
+export class AppComponent implements OnInit {
+  constructor(private titleService: Title) {}
+
+  ngOnInit() {
+    this.titleService.setTitle('TechNova Hub');
+  }
 }

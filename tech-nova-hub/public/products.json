@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "Smartphones",
     "name": "Galaxy Z Fold 5",
     "price": 1799,
     "description": "A foldable smartphone with a 7.6-inch display.",
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": "Werables",
     "name": "Apple Watch Ultra 2",
     "price": 799,
     "description": "A rugged smartwatch for extreme sports.",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": "VR",
     "name": "Oculus Quest 3",
     "price": 499,
     "description": "A VR headset for immersive gaming.",
