@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -32,17 +31,13 @@ export class ProductListComponent implements OnInit {
   sortBy: string = 'default';
   category: string = 'all';
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
       this.filteredProducts = products;
     });
-  }
-
-  onProductSelected(productId: string): void {
-    this.router.navigate(['/products', productId]);
   }
 
   filterProducts(): void {

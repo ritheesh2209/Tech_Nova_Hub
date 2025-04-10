@@ -1,23 +1,25 @@
 <div class="wishlist-container">
-    <h2>Wishlist</h2>
-    <div *ngIf="wishlistItems.length === 0">
-      <p>Your wishlist is empty.</p>
-    </div>
-    <div class="wishlist-items">
-      <mat-card *ngFor="let item of wishlistItems" class="wishlist-item">
-        <mat-card-header>
-          <mat-card-title>{{ item.name }}</mat-card-title>
-          <mat-card-subtitle>${{ item.price | number:'1.2-2' }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ item.description }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-icon-button color="warn" (click)="removeFromWishlist(item.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+  <h2>Wishlist</h2>
+  <div *ngIf="wishlistItems.length === 0">
+    <p>Your wishlist is empty.</p>
   </div>
-  
+  <div class="wishlist-items">
+    <mat-card *ngFor="let item of wishlistItems" class="wishlist-item">
+      <div class="image-fallback">
+        <img [src]="item.imageUrls[0]" alt="{{ item.name || 'Product' }}" loading="lazy">
+      </div>
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-subtitle>${{ item.price | number:'1.2-2' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="warn" (click)="removeFromWishlist(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

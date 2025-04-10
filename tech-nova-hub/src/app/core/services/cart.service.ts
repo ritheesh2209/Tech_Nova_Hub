@@ -8,7 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CartService {
   private cart: Product[] = [];
-  private cartSubject = new BehaviorSubject<Product[]>([]);
+  private cartItemsSubject = new BehaviorSubject<Product[]>([]);
+  cartItems$ = this.cartItemsSubject.asObservable();
   private isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -23,18 +24,18 @@ export class CartService {
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
       this.cart = JSON.parse(storedCart);
-      this.cartSubject.next(this.cart);
+      this.cartItemsSubject.next(this.cart);
     }
   }
 
   private saveCartToStorage(): void {
     if (!this.isBrowser) return;
     localStorage.setItem('cart', JSON.stringify(this.cart));
-    this.cartSubject.next(this.cart);
+    this.cartItemsSubject.next(this.cart);
   }
 
   getCart(): Observable<Product[]> {
-    return this.cartSubject.asObservable();
+    return this.cartItems$;
   }
 
   addToCart(product: Product): void {

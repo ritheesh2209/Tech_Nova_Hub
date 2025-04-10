@@ -8,7 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class WishlistService {
   private wishlist: Product[] = [];
-  private wishlistSubject = new BehaviorSubject<Product[]>([]);
+  private wishlistItemsSubject = new BehaviorSubject<Product[]>([]);
+  wishlistItems$ = this.wishlistItemsSubject.asObservable();
   private isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -23,18 +24,18 @@ export class WishlistService {
     const storedWishlist = localStorage.getItem('wishlist');
     if (storedWishlist) {
       this.wishlist = JSON.parse(storedWishlist);
-      this.wishlistSubject.next(this.wishlist);
+      this.wishlistItemsSubject.next(this.wishlist);
     }
   }
 
   private saveWishlistToStorage(): void {
     if (!this.isBrowser) return;
     localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
-    this.wishlistSubject.next(this.wishlist);
+    this.wishlistItemsSubject.next(this.wishlist);
   }
 
   getWishlist(): Observable<Product[]> {
-    return this.wishlistSubject.asObservable();
+    return this.wishlistItems$;
   }
 
   addToWishlist(product: Product): void {

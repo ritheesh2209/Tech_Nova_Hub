@@ -1,36 +1,34 @@
 <div class="product-list-container">
-    <h2>TechNova Hub Products</h2>
-    <div class="filters">
-      <mat-form-field appearance="fill">
-        <mat-label>Search Products</mat-label>
-        <input matInput [(ngModel)]="searchTerm" (input)="filterProducts()" placeholder="Search products...">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Sort By</mat-label>
-        <mat-select [(ngModel)]="sortBy" (selectionChange)="filterProducts()">
-          <mat-option value="default">Default</mat-option>
-          <mat-option value="price-asc">Price: Low to High</mat-option>
-          <mat-option value="price-desc">Price: High to Low</mat-option>
-          <mat-option value="name-asc">Name: A to Z</mat-option>
-          <mat-option value="name-desc">Name: Z to A</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Category</mat-label>
-        <mat-select [(ngModel)]="category" (selectionChange)="filterProducts()">
-          <mat-option value="all">All</mat-option>
-          <mat-option value="smartphones">Smartphones</mat-option>
-          <mat-option value="wearables">Wearables</mat-option>
-          <mat-option value="vr">VR</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="product-grid">
-      <app-product-card
-        *ngFor="let product of filteredProducts"
-        [product]="product"
-        (productSelected)="onProductSelected($event)">
-      </app-product-card>
-    </div>
+  <h2>TechNova Hub Products</h2>
+  <div class="filters">
+    <mat-form-field appearance="fill">
+      <mat-label>Search Products</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (input)="filterProducts()" placeholder="Search products...">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sort By</mat-label>
+      <mat-select [(ngModel)]="sortBy" (selectionChange)="filterProducts()">
+        <mat-option value="default">Default</mat-option>
+        <mat-option value="price-asc">Price: Low to High</mat-option>
+        <mat-option value="price-desc">Price: High to Low</mat-option>
+        <mat-option value="name-asc">Name: A to Z</mat-option>
+        <mat-option value="name-desc">Name: Z to A</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="category" (selectionChange)="filterProducts()">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="smartphones">Smartphones</mat-option>
+        <mat-option value="wearables">Wearables</mat-option>
+        <mat-option value="vr">VR</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  
+  <div class="product-grid">
+    <app-product-card
+      *ngFor="let product of filteredProducts"
+      [product]="product">
+    </app-product-card>
+  </div>
+</div>

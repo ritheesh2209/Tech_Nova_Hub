@@ -1,78 +1,70 @@
 .product-card {
-    cursor: pointer;
-    max-width: 300px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 0 0 auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #212121; // Dark background for dark mode
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .pannellum-viewer {
-    width: 100%;
-    height: 150px;
-    border: 1px solid #ddd;
-    border-radius: 4px 4px 0 0;
-  }
-  
-  .image-fallback {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    border-radius: 4px 4px 0 0;
-  }
-  
-  .image-fallback img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+  cursor: pointer;
+  max-width: 300px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #212121; // Dark background for dark mode
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-fallback {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.image-fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  color: #2e7d32; // White text for dark background
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: #2e7d32; // Keep the green color for price
+}
+
+mat-card-content {
+  font-size: 0.9rem;
+  color: #b0b0b0; // Light gray for description
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+mat-card-actions button {
+  transition: background-color 0.3s ease;
+}
+
+// Adjust styles for light mode
+:host-context(body:not(.dark-theme)) .product-card {
+  background-color: #ffffff; // White background in light mode
+
   mat-card-title {
-    font-size: 1.2rem;
-    color: #2e7d32; // White text for dark background
+    color: #2e7d32; // Dark text for light background
   }
-  
+
+  mat-card-content {
+    color: #2e7d32; // Dark gray for description
+  }
+
   mat-card-subtitle {
-    font-size: 1rem;
     color: #2e7d32; // Keep the green color for price
   }
-  
-  mat-card-content {
-    font-size: 0.9rem;
-    color: #b0b0b0; // Light gray for description
-  }
-  
-  mat-card-actions {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-  }
-  
-  mat-card-actions button {
-    transition: background-color 0.3s ease;
-  }
-  
-  // Adjust styles for light mode
-  :host-context(body:not(.dark-theme)) .product-card {
-    background-color: #ffffff; // White background in light mode
-  
-    mat-card-title {
-      color: #2e7d32; // Dark text for light background
-    }
-  
-    mat-card-content {
-      color: #2e7d32; // Dark gray for description
-    }
-  
-    mat-card-subtitle {
-      color: #2e7d32; // Keep the green color for price
-    }
-  }
-  
+}
