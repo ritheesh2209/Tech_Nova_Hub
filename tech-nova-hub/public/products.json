@@ -6,7 +6,7 @@
     "description": "A foldable smartphone with a 7.6-inch display.",
     "category": "Smartphones",
     "imageUrls": [
-      "https://pannellum.org/images/alma.jpg"
+      "https://fakeimg.pl/150x150?text=Galaxy+Z+Fold+5"
     ],
     "priceHistory": [
       { "date": "2025-01-01", "price": 1899 },
@@ -29,7 +29,7 @@
     "description": "A rugged smartwatch for extreme sports.",
     "category": "Wearables",
     "imageUrls": [
-      "https://pannellum.org/images/alma.jpg"
+      "https://fakeimg.pl/150x150?text=Apple+Watch"
     ],
     "priceHistory": [
       { "date": "2025-01-01", "price": 849 },
@@ -52,7 +52,7 @@
     "description": "A VR headset for immersive gaming.",
     "category": "Gaming",
     "imageUrls": [
-      "https://pannellum.org/images/alma.jpg"
+      "https://fakeimg.pl/150x150?text=Oculus+Quest+3"
     ],
     "priceHistory": [
       { "date": "2025-01-01", "price": 549 },
