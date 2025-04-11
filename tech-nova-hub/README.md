@@ -1,58 +1,114 @@
-# TechNovaHub
+# Tech Nova Hub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Tech Nova Hub is an e-commerce web application built with Angular, designed to provide a seamless shopping experience for tech products. The application includes features like product browsing, cart management, wishlist functionality, and a checkout process.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Product Listing**: Browse a list of tech products with details like name, price, and image.
+- **Product Details**: View detailed information about a product, including description, price history, and reviews.
+- **Cart Management**:
+  - Add products to the cart.
+  - Update quantities or remove items from the cart.
+  - Clear the cart.
+- **Wishlist**: Add or remove products from a wishlist.
+- **Checkout**:
+  - View cart items with their total cost.
+  - Confirm purchase to clear the cart and display a confirmation message.
+  - Navigate back to the home page after purchase.
+- **Theme Support**: Toggle between light and dark themes.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
-```bash
+## Tech Stack
+
+- **Framework**: Angular 17+
+- **Styling**: SCSS with Angular Material for UI components
+- **State Management**: RxJS (BehaviorSubject for cart and wishlist)
+- **Testing**: Jasmine and Karma
+- **Storage**: LocalStorage for persisting cart and wishlist data
+- **Routing**: Angular Router with lazy loading
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v18.x or later)
+- Angular CLI (v17.x or later)
+
+### Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/ritheesh2209/Tech_Nova_Hub.git
+```
+
+2. Navigate to the inner project directory where the Angular code is located:
+```
+cd tech-nova-hub
+```
+
+3. If you don't have Node.js installed:
+   - Download Node.js from [nodejs.org](https://nodejs.org/)
+   - Run the installer and follow the installation instructions
+   - Verify installation by running `node -v` and `npm -v` in your terminal
+
+4. Install project dependencies:
+```
+npm install
+```
+
+5. If you don't have Angular CLI installed:
+```
+npm install -g @angular/cli
+```
+
+   If you encounter permission errors:
+   
+   a. Create a new directory for global packages:
+   ```
+   mkdir ~/.npm-global
+   ```
+   
+   b. Tell npm to use it:
+   ```
+   npm config set prefix '~/.npm-global'
+   ```
+   
+   c. Add ~/.npm-global/bin to your PATH (for zsh users):
+   ```
+   echo 'export PATH=$HOME/.npm-global/bin:$PATH' >> ~/.zshrc
+   ```
+   
+   d. Apply the changes:
+   ```
+   source ~/.zshrc
+   ```
+   
+   e. Try again:
+   ```
+   npm install -g @angular/cli
+   ```
+   
+   f. Verify installation:
+   ```
+   ng version
+   ```
+
+6. Run the development server:
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+7. Open your browser and visit:
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+http://localhost:4200/
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
 

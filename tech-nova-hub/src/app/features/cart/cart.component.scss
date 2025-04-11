@@ -1,0 +1,159 @@
+.cart-container {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.cart-summary {
+  margin: 20px 0;
+  text-align: right;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin: 0;
+    color: #2e7d32;
+    font-size: 1.5rem;
+  }
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cart-item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.image-fallback {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.image-fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity-selector span {
+  min-width: 20px;
+  text-align: center;
+  color: #3f51b5;
+}
+
+.quantity-selector button {
+  color: #3f51b5;
+}
+
+// Dark mode styles
+:host-context(body.dark-theme) {
+  .cart-container {
+    background-color: #424242;
+  }
+
+  h2 {
+    color: #81c784;
+  }
+
+  .cart-summary {
+    background-color: #616161;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .cart-summary h3 {
+    color: #81c784;
+  }
+
+  .cart-item {
+    background-color: #616161;
+
+    mat-card-title {
+      color: #070200;
+    }
+
+    mat-card-subtitle {
+      color: #b0bec5;
+    }
+
+    mat-card-content p {
+      color: #60c1a6;
+    }
+  }
+
+  .quantity-selector span {
+    color: #90caf9;
+  }
+
+  .quantity-selector button {
+    color: #043f21;
+  }
+
+  .image-fallback {
+    border-color: #757575;
+  }
+}
+
+// Light mode styles
+:host-context(body:not(.dark-theme)) {
+  .cart-item {
+    background-color: #fff;
+
+    mat-card-title {
+      color: #070200;
+    }
+
+    mat-card-subtitle {
+      color: #546e7a;
+    }
+
+    mat-card-content p {
+      color: #60c1a6;
+    }
+  }
+
+  .quantity-selector span {
+    color: #0a0800;
+  }
+
+  .quantity-selector button {
+    color: #043f21;
+  }
+}

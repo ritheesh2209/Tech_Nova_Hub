@@ -1,0 +1,48 @@
+<div class="checkout-container">
+  <div class="checkout-header">
+    <h2>Checkout</h2>
+  </div>
+  @if (!isCheckoutComplete) {
+    @if (cartItems.length === 0) {
+      <p>Your cart is empty.</p>
+      <button mat-raised-button color="primary" (click)="goToHome()">
+        <mat-icon>home</mat-icon> Go to Home
+      </button>
+    }
+    @if (cartItems.length > 0) {
+      <div class="checkout-summary">
+        <h3>Total Cost: ${{ totalPrice | number:'1.2-2' }}</h3>
+        <button mat-raised-button color="primary" (click)="confirmPurchase()">
+          <mat-icon>check_circle</mat-icon> Confirm Purchase
+        </button>
+      </div>
+      <div class="checkout-items">
+        @for (item of cartItems; track item?.product?.id) {
+          <mat-card class="checkout-item">
+            <div class="image-fallback">
+              <img [src]="item?.product?.imageUrls?.[0] || ''" alt="{{ item?.product?.name || 'Product' }}" loading="lazy">
+            </div>
+            <mat-card-header>
+              <mat-card-title class="product-name">{{ item?.product?.name || 'Unknown Product' }}</mat-card-title>
+              <mat-card-subtitle class="product-price">
+                ${{ item?.product?.price | number:'1.2-2' }} x {{ item?.quantity }} = 
+                ${{ ((item?.product?.price ?? 0) * (item?.quantity ?? 0)) | number:'1.2-2' }}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="product-description">{{ item?.product?.description || 'No description available' }}</p>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    }
+  } @else {
+    <div class="checkout-complete">
+      <h3>Thank You for Your Purchase!</h3>
+      <p>Your order has been successfully placed.</p>
+      <button mat-raised-button color="primary" (click)="goToHome()">
+        <mat-icon>home</mat-icon> Go to Home
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,51 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h2>Cart</h2>
+    <button *ngIf="cartItems.length > 0" mat-raised-button color="warn" (click)="clearCart()">
+      <mat-icon>delete_forever</mat-icon> Clear Cart
+    </button>
+  </div>
+  <div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty.</p>
+    <button mat-raised-button color="primary" [routerLink]="['/products']">
+      <mat-icon>shopping_bag</mat-icon> Shop Now
+    </button>
+  </div>
+  <div *ngIf="cartItems.length > 0" class="cart-summary">
+    <h3>Total Cost: ${{ totalCost | number:'1.2-2' }}</h3>
+    <button mat-raised-button color="primary" [routerLink]="['/checkout']" [disabled]="cartItems.length === 0">
+      <mat-icon>shopping_cart_checkout</mat-icon> Checkout
+    </button>
+  </div>
+  <div class="cart-items">
+    <mat-card *ngFor="let item of cartItems" class="cart-item">
+      <div class="image-fallback">
+        <img [src]="item.product.imageUrls[0]" alt="{{ item.product.name || 'Product' }}" loading="lazy">
+      </div>
+      <mat-card-header>
+        <mat-card-title class="product-name">{{ item.product.name }}</mat-card-title>
+        <mat-card-subtitle class="product-price">
+          ${{ item.product.price | number:'1.2-2' }} x {{ item.quantity }} = 
+          ${{ (item.product.price * item.quantity) | number:'1.2-2' }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="product-description">{{ item.product.description }}</p>
+        <div class="quantity-selector">
+          <button mat-icon-button (click)="decreaseQuantity(item)">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <span>{{ item.quantity }}</span>
+          <button mat-icon-button (click)="increaseQuantity(item)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="warn" (click)="removeFromCart(item.product.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
