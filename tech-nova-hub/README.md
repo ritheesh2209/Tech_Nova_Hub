@@ -30,6 +30,7 @@ Tech Nova Hub is an e-commerce web application built with Angular, designed to p
 ## Setup Instructions
 
 ### Prerequisites
+
 - Node.js (v18.x or later)
 - Angular CLI (v17.x or later)
 
@@ -40,9 +41,10 @@ Tech Nova Hub is an e-commerce web application built with Angular, designed to p
 git clone https://github.com/ritheesh2209/Tech_Nova_Hub.git
 ```
 
-2. Navigate to the main repository folder:
+2. Navigate to the main repository folder and checkout the required branch:
 ```
 cd Tech_Nova_Hub
+git checkout feature/initial_branch  # or any other branch you need to work with
 ```
 
 3. Navigate to the inner project directory where the Angular code is located:
@@ -50,34 +52,38 @@ cd Tech_Nova_Hub
 cd tech-nova-hub
 ```
 
-4. Install dependencies:
+4. If you don't have Node.js installed:
+   - Download Node.js from [nodejs.org](https://nodejs.org/)
+   - Run the installer and follow the installation instructions
+   - Verify installation by running `node -v` and `npm -v` in your terminal
+
+5. If you don't have Angular CLI installed:
+```
+npm install -g @angular/cli
+```
+
+6. Install project dependencies:
 ```
 npm install
 ```
 
-5. Run the development server:
+7. Run the development server:
 ```
 ng serve
 ```
 
-6. Open your browser and visit:
+8. Open your browser and visit:
 ```
 http://localhost:4200/
 ```
 
-### Working with Branches
-
-If you want to access a specific branch (like the feature/initial_branch):
-```
-git checkout feature/initial_branch
-```
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
 ```bash
 ng test
 ```
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
