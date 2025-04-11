@@ -41,28 +41,22 @@ Tech Nova Hub is an e-commerce web application built with Angular, designed to p
 git clone https://github.com/ritheesh2209/Tech_Nova_Hub.git
 ```
 
-2. Navigate to the main repository folder and checkout the required branch:
-```
-cd Tech_Nova_Hub
-git checkout feature/initial_branch  # or any other branch you need to work with
-```
-
-3. Navigate to the inner project directory where the Angular code is located:
+2. Navigate to the inner project directory where the Angular code is located:
 ```
 cd tech-nova-hub
 ```
 
-4. If you don't have Node.js installed:
+3. If you don't have Node.js installed:
    - Download Node.js from [nodejs.org](https://nodejs.org/)
    - Run the installer and follow the installation instructions
    - Verify installation by running `node -v` and `npm -v` in your terminal
 
-5. Install project dependencies:
+4. Install project dependencies:
 ```
 npm install
 ```
 
-6. If you don't have Angular CLI installed:
+5. If you don't have Angular CLI installed:
 ```
 npm install -g @angular/cli
 ```
@@ -99,12 +93,12 @@ npm install -g @angular/cli
    ng version
    ```
 
-7. Run the development server:
+6. Run the development server:
 ```
 ng serve
 ```
 
-8. Open your browser and visit:
+7. Open your browser and visit:
 ```
 http://localhost:4200/
 ```
