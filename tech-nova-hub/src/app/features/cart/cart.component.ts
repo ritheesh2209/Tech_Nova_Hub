@@ -1,3 +1,4 @@
+// src/app/features/cart/cart.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -38,7 +39,12 @@ export class CartComponent implements OnInit {
   }
 
   decreaseQuantity(item: CartItem) {
-    this.cartService.updateQuantity(item.product.id, item.quantity - 1);
+    const newQuantity = item.quantity - 1;
+    if (newQuantity > 0) {
+      this.cartService.updateQuantity(item.product.id, newQuantity);
+    } else {
+      this.cartService.removeFromCart(item.product.id);
+    }
   }
 
   removeFromCart(productId: string) {

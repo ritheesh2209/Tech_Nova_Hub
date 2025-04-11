@@ -1,3 +1,4 @@
+<!-- src/app/features/cart/cart.component.html -->
 <div class="cart-container">
   <div class="cart-header">
     <h2>Cart</h2>
@@ -7,6 +8,9 @@
   </div>
   <div *ngIf="cartItems.length === 0">
     <p>Your cart is empty.</p>
+    <button mat-raised-button color="primary" [routerLink]="['/products']">
+      <mat-icon>shopping_bag</mat-icon> Shop Now
+    </button>
   </div>
   <div *ngIf="cartItems.length > 0" class="cart-summary">
     <h3>Total Cost: ${{ totalCost | number:'1.2-2' }}</h3>
@@ -20,14 +24,14 @@
         <img [src]="item.product.imageUrls[0]" alt="{{ item.product.name || 'Product' }}" loading="lazy">
       </div>
       <mat-card-header>
-        <mat-card-title>{{ item.product.name }}</mat-card-title>
-        <mat-card-subtitle>
+        <mat-card-title class="product-name">{{ item.product.name }}</mat-card-title>
+        <mat-card-subtitle class="product-price">
           ${{ item.product.price | number:'1.2-2' }} x {{ item.quantity }} = 
           ${{ (item.product.price * item.quantity) | number:'1.2-2' }}
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>{{ item.product.description }}</p>
+        <p class="product-description">{{ item.product.description }}</p>
         <div class="quantity-selector">
           <button mat-icon-button (click)="decreaseQuantity(item)">
             <mat-icon>remove</mat-icon>
