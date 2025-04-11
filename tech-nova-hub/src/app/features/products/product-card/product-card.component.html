@@ -7,11 +7,17 @@
     <img [src]="product.imageUrls[0]" alt="{{ product.name || 'Product' }}" loading="lazy">
   </div>
   <mat-card-actions>
-    <button mat-icon-button (click)="toggleWishlist(); $event.stopPropagation()">
-      <mat-icon [color]="isInWishlist ? 'warn' : ''">favorite</mat-icon>
-    </button>
-    <button mat-icon-button (click)="toggleCart(); $event.stopPropagation()">
-      <mat-icon [color]="isInCart ? 'primary' : ''">shopping_cart</mat-icon>
-    </button>
+    <div class="tooltip-wrapper">
+      <button mat-icon-button (click)="toggleWishlist(); $event.stopPropagation()">
+        <mat-icon [color]="isInWishlist ? 'warn' : ''">favorite</mat-icon>
+      </button>
+      <span class="custom-tooltip">{{ isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist' }}</span>
+    </div>
+    <div class="tooltip-wrapper">
+      <button mat-icon-button (click)="toggleCart(); $event.stopPropagation()">
+        <mat-icon [color]="isInCart ? 'primary' : ''">shopping_cart</mat-icon>
+      </button>
+      <span class="custom-tooltip">{{ isInCart ? 'Remove from Cart' : 'Add to Cart' }}</span>
+    </div>
   </mat-card-actions>
 </mat-card>

@@ -1,4 +1,3 @@
-// src/app/features/cart/cart.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CartComponent } from './cart.component';
 import { CartService } from 'app/core/services/cart.service';

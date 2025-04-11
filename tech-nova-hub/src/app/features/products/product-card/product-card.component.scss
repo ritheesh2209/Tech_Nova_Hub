@@ -52,7 +52,36 @@ mat-card-actions button {
   transition: background-color 0.3s ease;
 }
 
-// Adjust styles for light mode
+/* Custom tooltip styles */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #60c1a6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.tooltip-wrapper:hover .custom-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Adjust styles for light mode */
 :host-context(body:not(.dark-theme)) .product-card {
   background-color: #ffffff;
 
@@ -66,5 +95,10 @@ mat-card-actions button {
 
   mat-card-subtitle {
     color: #2e7d32;
+  }
+
+  .custom-tooltip {
+    background-color:#60c1a6;
+    color: white;
   }
 }

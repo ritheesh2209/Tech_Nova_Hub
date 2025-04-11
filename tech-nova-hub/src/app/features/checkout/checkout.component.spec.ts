@@ -25,7 +25,7 @@ describe('CheckoutComponent', () => {
         price: 100,
         description: 'Test Description',
         imageUrls: ['test-image.jpg'],
-        category: 'Test Category', // Add all required Product properties
+        category: 'Test Category',
         priceHistory: [],
         reviews: []
       },
