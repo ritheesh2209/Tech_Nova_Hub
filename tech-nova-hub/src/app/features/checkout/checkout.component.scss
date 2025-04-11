@@ -1,95 +1,187 @@
+// Default styles (Light Mode)
 .checkout-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  }
-  
-  .checkout-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .checkout-item {
-    display: flex;
-    gap: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  
-    .checkout-item-image {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
-  
-    .checkout-item-details {
-      flex: 1;
-  
-      h3 {
-        margin: 0 0 10px 0;
-      }
-  
-      p {
-        margin: 5px 0;
-      }
-    }
-  }
-  
-  .checkout-summary {
-    margin-top: 20px;
-    text-align: right;
-  
-    h3 {
-      margin: 0 0 10px 0;
-    }
-  
-    .confirm-button {
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  }
-  
-  .checkout-complete {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
     text-align: center;
-  
-    h3 {
-      color: #28a745;
-      margin-bottom: 10px;
-    }
-  
-    p {
-      margin-bottom: 20px;
-    }
-  
-    .home-button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
+    margin-bottom: 20px;
+  }
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.checkout-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  width: 300px;
+  margin-bottom: 16px;
+}
+
+.image-fallback img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+// Light Mode Colors
+.product-name {
+  color: #000300;
+}
+
+.product-price {
+  color: #546e7a;
+}
+
+.product-description {
+  color: #60c1a6;
+}
+
+.checkout-summary {
+  margin-top: 20px;
+  text-align: right;
+
+  h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+
+  button[mat-raised-button] {
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #218838;
     }
   }
-  
-  .home-button {
-    padding: 10px 20px;
+}
+
+.checkout-complete {
+  text-align: center;
+
+  h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  button[mat-raised-button] {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
   }
-  
+}
+
+.home-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+// Dark Mode Styles
+:host-context(.dark-theme) {
+  .checkout-container {
+    background-color: #212121;
+  }
+
+  .checkout-item {
+    background-color: #424242;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+
+  .product-name {
+    color: #070200;
+  }
+
+  .product-price {
+    color: #b0bec5;
+  }
+
+  .product-description {
+    color: #60c1a6;
+  }
+
+  .checkout-summary {
+    h3 {
+      color: #ffffff;
+    }
+
+    button[mat-raised-button] {
+      background-color: #4caf50;
+      color: white;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+
+  .checkout-complete {
+    h3 {
+      color: #4caf50;
+    }
+
+    p {
+      color: #bdbdbd;
+    }
+
+    button[mat-raised-button] {
+      background-color: #42a5f5;
+      color: white;
+
+      &:hover {
+        background-color: #1e88e5;
+      }
+    }
+  }
+
+  .home-button {
+    background-color: #42a5f5;
+
+    &:hover {
+      background-color: #1e88e5;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .checkout-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkout-item {
+    width: 100%;
+    max-width: 400px;
+  }
+}
