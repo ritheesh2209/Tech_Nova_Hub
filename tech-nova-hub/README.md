@@ -52,19 +52,19 @@ git checkout feature/initial_branch  # or any other branch you need to work with
 cd tech-nova-hub
 ```
 
-4. If you don't have Node.js installed:
+4. Install project dependencies:
+```
+npm install
+```
+
+5. If you don't have Node.js installed:
    - Download Node.js from [nodejs.org](https://nodejs.org/)
    - Run the installer and follow the installation instructions
    - Verify installation by running `node -v` and `npm -v` in your terminal
 
-5. If you don't have Angular CLI installed:
+6. If you don't have Angular CLI installed:
 ```
 npm install -g @angular/cli
-```
-
-6. Install project dependencies:
-```
-npm install
 ```
 
 7. Run the development server:
