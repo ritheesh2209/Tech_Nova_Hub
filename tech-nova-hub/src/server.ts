@@ -53,6 +53,11 @@ app.get('**', (req, res, next) => {
     .catch((err) => next(err));
 });
 
+
+/**
+ * Handle 404 errors
+ */
+
 /**
  * Start the server if this module is the main entry point.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
