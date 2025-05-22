@@ -36,6 +36,10 @@ app.get(
 );
 
 /**
+ * Serve static files from /assets
+ */
+
+/**
  * Handle all other requests by rendering the Angular application.
  */
 app.get('**', (req, res, next) => {
